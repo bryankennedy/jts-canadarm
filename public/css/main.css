@@ -1,3 +1,57 @@
+/**
+ * Background setup
+ */
 body {
-  background: #333;
+  background: #000;
+}
+
+/**
+ * Hide the cursor
+ */
+*,
+*:active,
+*:hover
+*:link,
+*:visited {
+  cursor: none !important;
+}
+
+/**
+ * Prevent drag selection
+ */
+*::selection {
+    background:transparent;
+}
+
+*::-moz-selection {
+    background:transparent;
+}
+
+*::-webkit-selection {
+    background:transparent;
+}
+
+/**
+ * Our display is fixed to 1366x768, so set the slide size accordingly
+ */
+.slide {
+  width: 1366px;
+  height: 768px;
+}
+
+/**
+ * Customize the deck.js fade transition time
+ */
+.csstransitions.csstransforms .deck-container .slide {
+    -webkit-transition: opacity 1000ms ease-in-out 0ms;
+    transition: opacity 1000ms ease-in-out 0ms;
+}
+
+/**
+ * Interlude slides
+ */
+.interlude {
+  font-size: 4em;
+  color: #DDD;
+  margin-top: 0;
 }

@@ -66,43 +66,4 @@ $(document).keydown(function(e){
         $.deck('go', 'start-slide');
     }
 
-    /**
-     * Z
-     */
-    if (e.keyCode == 90) {
-        console.log('Z pressed');
-        $.deck('go', 'earthmobile-interlude');
-    }
-
-    /**
-     * X
-     */
-    if (e.keyCode == 88) {
-        console.log('X pressed');
-        $.deck('go', 'eating-water-interlude');
-    }
-
-    /**
-     * C
-     */
-    if (e.keyCode == 67) {
-        console.log('C pressed');
-        $.deck('go', 'acidifying-oceans-interlude');
-    }
-
-    /**
-     * V
-     */
-    if (e.keyCode == 86) {
-        console.log('V pressed');
-        $.deck('go', 'hot-air-interlude');
-    }
-
-    /**
-     * B
-     */
-    if (e.keyCode == 66) {
-        console.log('B pressed');
-        $.deck('go', 'human-era-interlude');
-    }
 });
