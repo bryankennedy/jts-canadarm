@@ -55,7 +55,15 @@ $(document).keydown(function(e){
      */
     if (e.keyCode == 69) {
         console.log('E pressed');
-        $.deck('go', 'black-slide')
+        $.deck('go', 'black-slide');
+    }
+
+    /**
+     * ?
+     */
+    if (e.shiftKey && e.keyCode == 191) {
+        console.log('? pressed');
+        $.deck('go', 'start-slide');
     }
 
     /**
