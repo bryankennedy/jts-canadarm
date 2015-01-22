@@ -35,16 +35,16 @@ $(document).keydown(function(e){
      * Q
      */
     if (e.keyCode == 81) {
-        console.log('Q - Loading paused Object Theater video.');
-        $.deck('go', 'earthmobile-slide')
+        console.log('Q - Loading paused Canadarm video');
+        $.deck('go', 'canadarm-slide');
     }
 
     /**
      * W
      */
     if (e.keyCode == 87) {
-        console.log('W - Playing Object Theater video.');
-        $('#earthmobile-slide').find('video').each(function() {
+        console.log('W - Playing Canadarm video');
+        $('#canadarm-slide').find('video').each(function() {
             var myPlayer = _V_(this);
             myPlayer.play();
         });
