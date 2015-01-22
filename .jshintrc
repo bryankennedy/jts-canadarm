@@ -13,7 +13,9 @@
     // Normal stuff
     "window": false,
     "console": false,
-    "document": false
+    "document": false,
+    // Video JS
+    "videojs": false
   }
 }
 
