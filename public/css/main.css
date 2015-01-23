@@ -50,8 +50,7 @@ body {
 /**
  * Interlude slides
  */
-.interlude {
-  font-size: 4em;
+.start-slide {
+  padding: 3%;
   color: #DDD;
-  margin-top: 0;
 }
