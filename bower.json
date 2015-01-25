@@ -1,0 +1,13 @@
+{
+  "name": "jts-canadarm",
+  "version": "0.0.1",
+  "homepage": "https://github.com/scimusmn/jts-canadarm",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "deck.js": "~1.1.0",
+    "videojs": "~4.11.3",
+    "jquery-ui": "~1.11.2",
+    "modernizr": "~2.8.3"
+  }
+}
