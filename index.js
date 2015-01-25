@@ -12,8 +12,12 @@ var io = require('socket.io')(http);
 // Serve files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res){
+app.get('/chat', function(req, res){
     res.sendFile(__dirname + '/public/00-chat-test.html');
+});
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/public/01-laptop-canadarm.html');
 });
 
 io.on('connection', function(socket) {
@@ -29,8 +33,15 @@ io.on('connection', function(socket) {
 });
 
 io.on('connection', function(socket){
+    // Chat message
     socket.on('chat message', function(msg){
         io.emit('chat message', msg);
+    });
+
+    // Video play
+    socket.on('video play', function(msg){
+        console.log('video play', msg);
+        //io.emit('chat message', msg);
     });
 });
 

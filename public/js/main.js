@@ -1,3 +1,5 @@
+var socket = io();
+
 /**
  * Init the slide deck
  */
@@ -37,6 +39,7 @@ $(document).keydown(function(e){
     if (e.keyCode == 81) {
         console.log('Q - Loading paused Canadarm video');
         $.deck('go', 'canadarm-slide');
+        socket.emit('video play', 'special message');
     }
 
     /**
@@ -67,3 +70,13 @@ $(document).keydown(function(e){
     }
 
 });
+
+$('form').submit(function() {
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+});
+socket.on('chat message', function(msg) {
+    $('#messages').append($('<li>').text(msg));
+});
+
