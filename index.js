@@ -1,3 +1,6 @@
+/**
+ * Setup
+ */
 // Load Express, the Node JS web framework
 var express = require('express');
 var app = express();
@@ -9,6 +12,10 @@ var http = require('http').Server(app);
 var path = require('path');
 var io = require('socket.io')(http);
 
+
+/**
+ * Routing
+ */
 // Serve files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -20,22 +27,17 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/01-laptop-canadarm.html');
 });
 
-io.on('connection', function(socket) {
-    socket.on('chat message', function(msg) {
-        console.log('msg - ', msg);
-    });
 
+/**
+ * Socket communication
+ */
+io.on('connection', function(socket) {
     console.log('A computer connected');
 
-    socket.on('disconnect', function() {
-        console.log('User disconnected');
-    });
-});
-
-io.on('connection', function(socket){
     // Chat message
-    socket.on('chat message', function(msg){
+    socket.on('chat message', function(msg) {
         io.emit('chat message', msg);
+        console.log('msg - ', msg);
     });
 
     // Video play
@@ -43,8 +45,18 @@ io.on('connection', function(socket){
         console.log('video play', msg);
         //io.emit('chat message', msg);
     });
+
+    socket.on('disconnect', function() {
+        console.log('User disconnected');
+    });
 });
 
+
+/**
+ * Server
+ *
+ * Start the web server and list on port 3000
+ */
 http.listen(3000, function(){
-    console.log('listening on *:3000');
+    console.log('Listening on *:3000');
 });
