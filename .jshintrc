@@ -14,6 +14,8 @@
     "window": false,
     "console": false,
     "document": false,
+    // Node
+    "require": false,
     // Video JS
     "videojs": false
   }
