@@ -1,4 +1,4 @@
-# Space exhibit - Rotating lab - Canadarm system
+# Space exhibit<br>Rotating lab - Canadarm system
 
 Currently a work in progress
 
