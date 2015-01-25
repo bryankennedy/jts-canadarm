@@ -40,9 +40,9 @@ io.on('connection', function(socket) {
         console.log('msg - ', msg);
     });
 
-    // Video play
-    socket.on('video play', function(msg){
-        console.log('video play', msg);
+    // Video message
+    socket.on('video-msg', function(msg){
+        console.log('Video message: ', msg);
         //io.emit('chat message', msg);
     });
 

@@ -1,8 +1,9 @@
 /**
  * Listen for keystrokes
  *
- * Keystrokes are simulated by the automation system and AutoIt scripts
- * These can be found in the https://github.com/scimusmn/sos_autoit_scripts
+ * A contact closure is triggered by the show control device.
+ * The contact closure causes the keyboard enclousre to submit a keystroke.
+ * We use this as the signal to load/start the video.
  *
  **/
 $(document).keydown(function(e){
@@ -24,6 +25,7 @@ $(document).keydown(function(e){
         $('#canadarm-slide').find('video').each(function() {
             var myPlayer = _V_(this);
             myPlayer.play();
+            socket.emit('video-msg', 'playing');
         });
     }
 
