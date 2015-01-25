@@ -22,10 +22,10 @@ $(document).keydown(function(e){
      */
     if (e.keyCode == 87) {
         console.log('W - Playing Canadarm video');
+        socket.emit('video-msg', 'playing');
         $('#canadarm-slide').find('video').each(function() {
             var myPlayer = _V_(this);
             myPlayer.play();
-            socket.emit('video-msg', 'playing');
         });
     }
 
