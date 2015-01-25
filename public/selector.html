@@ -7,7 +7,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>05 Glovebox laptop</title>
+    <title>Destiny Module</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,25 +24,21 @@
   </head>
   <body>
 
-    <div class="deck-container">
-
-      <section class="slide start-slide" id="start-slide">
-        <div class="film-title">
-          <h1>Worker 05</h1>
-          <h2>Glovebox Laptop - Experiments</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <ul class="list-unstyled selector">
+            <li><a class="btn btn-info btn-lg btn-block" href="01">01 - Canadarm Laptop</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="02">02 - Canadarm Laptop Monitor</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="03">03 - Surface left</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="04">04 - Surface right</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="05">05 - Glovebox laptop</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="06">06 - Code Laptop #1</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="07">07 - Code Laptop #2</a></li>
+            <li><a class="btn btn-info btn-lg btn-block" href="99">99 - Caption simulation</a></li>
+          </ul>
         </div>
-      </section>
-
-      <section class="slide" id="black-slide">
-        <div class="black"></div>
-      </section>
-
-      <section class="slide" id="video-slide">
-        <video id="objth" class="video-js vjs-default-skin" preload="auto" width="1366" height="768" data-setup="{}">
-          <source src="/media/video/05-glovebox-laptop.mp4" type='video/mp4' />
-        </video>
-      </section>
-
+      </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
@@ -57,7 +53,7 @@
     <script src="/js/deck-extensions/deck.events.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/video.js"></script>
-    <script src="/js/worker.js"></script>
+    <script src="/js/manager.js"></script>
 
   </body>
 </html>

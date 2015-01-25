@@ -23,6 +23,10 @@ app.get('/chat', function(req, res){
     res.sendFile(__dirname + '/public/00-chat-test.html');
 });
 
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/public/selector.html');
+});
+
 app.get('/01', function(req, res){
     res.sendFile(__dirname + '/public/01-laptop-canadarm.html');
 });
@@ -50,6 +54,11 @@ app.get('/06', function(req, res){
 app.get('/07', function(req, res){
     res.sendFile(__dirname + '/public/07-laptop-code-02.html');
 });
+
+app.get('/99', function(req, res){
+    res.sendFile(__dirname + '/public/99-captions.html');
+});
+
 
 /**
  * Socket communication
