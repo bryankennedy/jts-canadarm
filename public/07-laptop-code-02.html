@@ -11,15 +11,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.min.css" type="text/css">
-    <link rel="stylesheet" href="bower_components/deck.js/core/deck.core.css">
-    <link rel="stylesheet" href="bower_components/deck.js/themes/transition/fade.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bower_components/videojs/dist/video-js/video-js.min.css" type="text/css">
+    <link rel="stylesheet" href="/bower_components/deck.js/core/deck.core.css">
+    <link rel="stylesheet" href="/bower_components/deck.js/themes/transition/fade.css">
+    <link rel="stylesheet" href="/css/main.css">
 
     <!-- Modernizr is required for everything else first -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
 
   </head>
   <body>
@@ -28,11 +28,8 @@
 
       <section class="slide start-slide" id="start-slide">
         <div class="film-title">
-          <h1>Canadarm</h1>
-          <h2>Laptop screen</h2>
-          <p>Press Q to load video, then press W to play video.</p>
-          <p>Press E for a black screen.</p>
-          <p>Press ? for this help scren.</p>
+          <h1>Worker 07</h1>
+          <h2>Laptop - Code 02</h2>
         </div>
       </section>
 
@@ -40,24 +37,27 @@
         <div class="black"></div>
       </section>
 
-      <section class="slide" id="canadarm-slide">
+      <section class="slide" id="video-slide">
         <video id="objth" class="video-js vjs-default-skin" preload="auto" width="1366" height="768" data-setup="{}">
-          <source src="media/video/canadarm-laptop.mp4" type='video/mp4' />
+          <source src="/media/video/06-laptop-code-01.mp4" type='video/mp4' />
         </video>
       </section>
 
     </div>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!--TODO - Figure out if we need this-->
     <!--<script src="bower_components/countdown.js/lib/countdown.js"></script>-->
-    <script src="bower_components/jquery-ui/ui/minified/core.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/videojs/dist/video-js/video.js"></script>
-    <script src="bower_components/deck.js/core/deck.core.js"></script>
-    <script src="js/deck-extensions/deck.video.js"></script>
-    <script src="js/deck-extensions/deck.events.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/bower_components/jquery-ui/ui/minified/core.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/videojs/dist/video-js/video.js"></script>
+    <script src="/bower_components/deck.js/core/deck.core.js"></script>
+    <script src="/js/deck-extensions/deck.video.js"></script>
+    <script src="/js/deck-extensions/deck.events.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/video.js"></script>
+    <script src="/js/worker.js"></script>
 
   </body>
 </html>

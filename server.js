@@ -27,10 +27,29 @@ app.get('/01', function(req, res){
     res.sendFile(__dirname + '/public/01-laptop-canadarm.html');
 });
 
+app.get('/02', function(req, res){
+    res.sendFile(__dirname + '/public/02-monitor-canadarm.html');
+});
+
+app.get('/03', function(req, res){
+    res.sendFile(__dirname + '/public/03-surface-canadarm-01.html');
+});
+
+app.get('/04', function(req, res){
+    res.sendFile(__dirname + '/public/04-surface-canadarm-02.html');
+});
+
+app.get('/05', function(req, res){
+    res.sendFile(__dirname + '/public/05-laptop-glovebox.html');
+});
+
 app.get('/06', function(req, res){
     res.sendFile(__dirname + '/public/06-laptop-code-01.html');
 });
 
+app.get('/07', function(req, res){
+    res.sendFile(__dirname + '/public/07-laptop-code-02.html');
+});
 
 /**
  * Socket communication
