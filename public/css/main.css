@@ -13,7 +13,8 @@ body {
 *:hover
 *:link,
 *:visited {
-  cursor: none !important;
+  /* Hidden cursor disabled during development */
+  /*cursor: none !important;*/
 }
 
 /**
