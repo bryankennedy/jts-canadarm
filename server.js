@@ -23,8 +23,12 @@ app.get('/chat', function(req, res){
     res.sendFile(__dirname + '/public/00-chat-test.html');
 });
 
-app.get('/', function(req, res){
+app.get('/01', function(req, res){
     res.sendFile(__dirname + '/public/01-laptop-canadarm.html');
+});
+
+app.get('/06', function(req, res){
+    res.sendFile(__dirname + '/public/06-laptop-code-01.html');
 });
 
 
