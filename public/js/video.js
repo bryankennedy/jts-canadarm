@@ -9,7 +9,7 @@
  * We don't want to show this to museum visitors while the video is loading.
  */
 videojs('objth', {
-    muted: true,
+    muted: false,
     children: {
         loadingSpinner: false
     }

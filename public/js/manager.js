@@ -13,7 +13,7 @@ $(document).keydown(function(e){
      */
     if (e.keyCode == 81) {
         console.log('Q - Loading paused Canadarm video');
-        $.deck('go', 'canadarm-slide');
+        $.deck('go', 'video-slide');
         socket.emit('video-msg', 'loading');
     }
 
@@ -23,7 +23,7 @@ $(document).keydown(function(e){
     if (e.keyCode == 87) {
         console.log('W - Playing Canadarm video');
         socket.emit('video-msg', 'playing');
-        $('#canadarm-slide').find('video').each(function() {
+        $('#video-slide').find('video').each(function() {
             var myPlayer = _V_(this);
             myPlayer.play();
         });
@@ -35,6 +35,50 @@ $(document).keydown(function(e){
     if (e.keyCode == 69) {
         console.log('E pressed');
         $.deck('go', 'black-slide');
+    }
+
+    var seconds;
+
+    /**
+     * A
+     */
+    if (e.keyCode == 65) {
+        console.log('A pressed');
+        seconds = 148;
+        socket.emit('video-jump', seconds);
+        // Jump to a specific time
+        $('#video-slide').find('video').each(function() {
+            var myPlayer = _V_(this);
+            myPlayer.currentTime(seconds);
+        });
+    }
+
+    /**
+     * S
+     */
+    if (e.keyCode == 83) {
+        console.log('D pressed');
+        seconds = 177;
+        socket.emit('video-jump', seconds);
+        // Jump to a specific time
+        $('#video-slide').find('video').each(function() {
+            var myPlayer = _V_(this);
+            myPlayer.currentTime(seconds);
+        });
+    }
+
+    /**
+     * D
+     */
+    if (e.keyCode == 68) {
+        console.log('D pressed');
+        seconds = 0;
+        socket.emit('video-jump', seconds);
+        // Jump to a specific time
+        $('#video-slide').find('video').each(function() {
+            var myPlayer = _V_(this);
+            myPlayer.currentTime(seconds);
+        });
     }
 
     /**

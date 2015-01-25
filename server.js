@@ -79,6 +79,13 @@ io.on('connection', function(socket) {
         io.emit('video-msg', msg);
     });
 
+    // Video jump
+    socket.on('video-jump', function(seconds){
+        console.log('Video jump seconds: ', seconds);
+        // Send the message back out to the workers
+        io.emit('video-jump', seconds);
+    });
+
     socket.on('disconnect', function() {
         console.log('User disconnected');
     });

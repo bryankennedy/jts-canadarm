@@ -14,3 +14,10 @@ socket.on('video-msg', function(msg){
     }
 
 });
+
+socket.on('video-jump', function(seconds){
+    $('#video-slide').find('video').each(function() {
+        var myPlayer = _V_(this);
+        myPlayer.currentTime(seconds);
+    });
+});
