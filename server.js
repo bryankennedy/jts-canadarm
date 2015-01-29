@@ -1,5 +1,5 @@
 /**
- * Setup
+ * Node setup
  */
 // Load Express, the Node JS web framework
 var express = require('express');
@@ -11,6 +11,34 @@ var http = require('http').Server(app);
 // Load utilities for file paths
 var path = require('path');
 var io = require('socket.io')(http);
+
+
+/**
+ * UDP Settings
+ *
+ * Change this to the Brightsign manager
+ *
+ * Current valid messages are:
+ *  - loading
+ *  - playing
+ */
+var udpPort = 5005;
+var udpHost = '127.0.0.1';
+var dgram = require('dgram');
+var udpServer = dgram.createSocket('udp4');
+
+/**
+ * Listen for UDP messages
+ */
+udpServer.on('listening', function () {
+    var address = udpServer.address();
+    console.log(
+        'Listenting for UDP messages from ' +
+        address.address + ':' +
+        address.port
+    );
+});
+udpServer.bind(udpPort, udpHost);
 
 
 /**
@@ -61,30 +89,37 @@ app.get('/99', function(req, res){
 
 
 /**
- * Socket communication
+ * Pass message from UDP to the client using Socket.io
  */
 io.on('connection', function(socket) {
-    console.log('A computer connected');
+    console.log('A browser connected to the local node server.');
 
-    // Chat message
-    socket.on('chat message', function(msg) {
-        io.emit('chat message', msg);
-        console.log('msg - ', msg);
+    udpServer.on('message', function (message, remote) {
+        console.log(remote.address + ':' + remote.port +' - ' + message);
+
+        io.emit('video-msg', String(message));
+
     });
 
-    // Video message
-    socket.on('video-msg', function(msg){
-        console.log('Video message: ', msg);
-        // Send the message back out to the workers
-        io.emit('video-msg', msg);
-    });
+    //// Chat message
+    //socket.on('chat message', function(msg) {
+        //io.emit('chat message', msg);
+        //console.log('msg - ', msg);
+    //});
 
-    // Video jump
-    socket.on('video-jump', function(seconds){
-        console.log('Video jump seconds: ', seconds);
-        // Send the message back out to the workers
-        io.emit('video-jump', seconds);
-    });
+    //// Video message
+    //socket.on('video-msg', function(msg){
+        //console.log('Video message: ', msg);
+        //// Send the message back out to the workers
+        //io.emit('video-msg', msg);
+    //});
+
+    //// Video jump
+    //socket.on('video-jump', function(seconds){
+        //console.log('Video jump seconds: ', seconds);
+        //// Send the message back out to the workers
+        //io.emit('video-jump', seconds);
+    //});
 
     socket.on('disconnect', function() {
         console.log('User disconnected');
