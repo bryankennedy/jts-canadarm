@@ -95,7 +95,7 @@ io.on('connection', function(socket) {
 /**
  * Server
  *
- * Start the web server and list on port 3000
+ * Start the web server and listen on port 3000
  */
 http.listen(3000, function(){
     console.log('Listening on *:3000');
