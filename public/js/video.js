@@ -10,7 +10,8 @@
  */
 videojs('objth', {
     muted: false,
+    controls: true,
     children: {
-        loadingSpinner: false
+        loadingSpinner: true
     }
 });
