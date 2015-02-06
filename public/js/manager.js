@@ -3,7 +3,7 @@
  */
 socket.on('video-msg', function(msg){
     console.log('msg - ', msg);
-}
+});
 
 /**
  * Listen for keystrokes
