@@ -107,12 +107,12 @@ io.on('connection', function(socket) {
         //console.log('msg - ', msg);
     //});
 
-    //// Video message
-    //socket.on('video-msg', function(msg){
-        //console.log('Video message: ', msg);
-        //// Send the message back out to the workers
-        //io.emit('video-msg', msg);
-    //});
+    // Video message
+    socket.on('video-msg', function(msg){
+        console.log('Video message: ', msg);
+        // Send the message back out to the workers
+        io.emit('video-msg', msg);
+    });
 
     //// Video jump
     //socket.on('video-jump', function(seconds){
