@@ -8,7 +8,7 @@ socket.on('video-msg', function(msg){
         $.deck('go', 'code-slide');
     }
 
-    if (msg == 'end') {
+    if (msg == 'attract') {
         console.log('Going to the black slide');
         $.deck('go', 'black-slide');
     }
