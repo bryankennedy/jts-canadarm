@@ -8,11 +8,14 @@ socket.on('video-msg', function(msg){
         $.deck('go', 'code-slide');
     }
 
-});
+    if (msg == 'end') {
+        console.log('Going to the black slide');
+        $.deck('go', 'black-slide');
+    }
 
-//socket.on('video-jump', function(seconds){
-    //$('#video-slide').find('video').each(function() {
-        //var myPlayer = _V_(this);
-        //myPlayer.currentTime(seconds);
-    //});
-//});
+    if (msg == 'debug') {
+        console.log('Going to the ID slides for debugging');
+        $.deck('go', 'debug-slide');
+    }
+
+});
