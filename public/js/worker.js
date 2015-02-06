@@ -7,7 +7,7 @@ socket.on('video-msg', function(msg){
         $.deck('go', 'video-slide');
     }
 
-    else if (msg == 'playing') {
+    else if (msg == 'play') {
         $('#video-slide').find('video').each(function() {
             var myPlayer = _V_(this);
             myPlayer.play();

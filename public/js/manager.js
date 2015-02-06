@@ -1,4 +1,11 @@
 /**
+ * Listen for socket messages coming from the server
+ */
+socket.on('video-msg', function(msg){
+    console.log('msg - ', msg);
+}
+
+/**
  * Listen for keystrokes
  *
  * A contact closure is triggered by the show control device.
