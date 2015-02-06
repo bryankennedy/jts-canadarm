@@ -1,6 +1,7 @@
 console.log('Worker loaded');
 
 socket.on('video-msg', function(msg){
+    console.log('msg - ', msg);
 
     if (msg == 'loading') {
         $.deck('go', 'video-slide');
