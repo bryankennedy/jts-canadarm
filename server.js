@@ -22,7 +22,7 @@ var io = require('socket.io')(http);
  *  - loading
  *  - playing
  */
-var udpPort = 5005;
+var udpPort = 5000;
 var udpHost = '127.0.0.1';
 var dgram = require('dgram');
 var udpServer = dgram.createSocket('udp4');
@@ -38,7 +38,7 @@ udpServer.on('listening', function () {
         address.port
     );
 });
-udpServer.bind(udpPort, udpHost);
+udpServer.bind(udpPort);
 
 
 /**
