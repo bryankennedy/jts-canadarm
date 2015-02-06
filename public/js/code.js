@@ -4,7 +4,7 @@ socket.on('video-msg', function(msg){
     console.log('msg - ', msg);
 
     if (msg == 'loading') {
-        $.deck('go', 'video-slide');
+        $.deck('go', 'code-slide');
     }
 
     else if (msg == 'play') {
@@ -14,9 +14,9 @@ socket.on('video-msg', function(msg){
 
 });
 
-socket.on('video-jump', function(seconds){
-    $('#video-slide').find('video').each(function() {
-        var myPlayer = _V_(this);
-        myPlayer.currentTime(seconds);
-    });
-});
+//socket.on('video-jump', function(seconds){
+    //$('#video-slide').find('video').each(function() {
+        //var myPlayer = _V_(this);
+        //myPlayer.currentTime(seconds);
+    //});
+//});
