@@ -3,6 +3,10 @@
  */
 socket.on('video-msg', function(msg){
     console.log('msg - ', msg);
+    $('#video-slide').find('video').each(function() {
+        var myPlayer = _V_(this);
+        myPlayer.play();
+    });
 });
 
 /**
