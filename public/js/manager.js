@@ -5,11 +5,13 @@ socket.on('video-msg', function(msg){
     console.log('msg - ', msg);
 
     // Plat the video on the manager system
-    $('#video-slide').find('video').each(function() {
-        console.log('Playing the video');
-        var myPlayer = _V_(this);
-        myPlayer.play();
-    });
+    if (msg == 'play') {
+        $('#video-slide').find('video').each(function() {
+            console.log('Playing the video');
+            var myPlayer = _V_(this);
+            myPlayer.play();
+        });
+    }
 });
 
 /**
