@@ -44,6 +44,12 @@ body {
   height: 768px;
 }
 
+.slide-tablet {
+  width: 1920px;
+  height: 1080px;
+}
+
+
 /**
  * Customize the deck.js fade transition time
  */
