@@ -42,6 +42,7 @@ body {
 .slide {
   width: 1366px;
   height: 768px;
+  background: #333;
 }
 
 .slide-tablet {
