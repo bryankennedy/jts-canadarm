@@ -49,6 +49,9 @@
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
+    <!--Handle Chrome and Electron library imports. -->
+    <!--Allows us to use jQuery in both environments-->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!--TODO - Figure out if we need this-->
     <!--<script src="bower_components/countdown.js/lib/countdown.js"></script>-->
